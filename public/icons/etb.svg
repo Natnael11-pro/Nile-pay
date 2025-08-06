@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M3 6h14M3 10h14M3 14h14M6 2v16M14 2v16" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="10" cy="10" r="7" stroke="#059669" stroke-width="1.5" fill="none"/>
+  <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#059669">ETB</text>
+</svg>

@@ -1,0 +1,778 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ethiopian Design System Variables */
+:root {
+  /* Ethiopian Flag Colors */
+  --eth-primary-green: #009639;
+  --eth-primary-yellow: #FFCD00;
+  --eth-primary-red: #DA020E;
+  --eth-primary-blue: #0F47AF;
+
+  /* Extended Ethiopian Palette */
+  --eth-emerald: #10B981;
+  --eth-gold: #F59E0B;
+  --eth-terracotta: #DC2626;
+  --eth-sapphire: #1E40AF;
+  --eth-coffee: #92400E;
+  --eth-ivory: #FEF3C7;
+
+  /* Ethiopian Gradients */
+  --eth-gradient-primary: linear-gradient(135deg, #009639 0%, #10B981 100%);
+  --eth-gradient-sunset: linear-gradient(135deg, #FFCD00 0%, #F59E0B 100%);
+  --eth-gradient-heritage: linear-gradient(135deg, #009639 0%, #FFCD00 50%, #DA020E 100%);
+  --eth-gradient-highlands: linear-gradient(135deg, #10B981 0%, #0F47AF 100%);
+
+  /* Ethiopian Shadows */
+  --eth-shadow-soft: 0 2px 8px rgba(0, 150, 57, 0.1);
+  --eth-shadow-medium: 0 4px 16px rgba(0, 150, 57, 0.15);
+  --eth-shadow-strong: 0 8px 32px rgba(0, 150, 57, 0.2);
+  --eth-shadow-glow: 0 0 20px rgba(0, 150, 57, 0.3);
+}
+
+/* Ethiopian Design Components */
+.eth-btn-primary {
+  @apply bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  background: var(--eth-gradient-primary);
+  box-shadow: var(--eth-shadow-medium);
+}
+
+.eth-btn-primary:hover {
+  box-shadow: var(--eth-shadow-strong);
+  transform: translateY(-2px);
+}
+
+.eth-btn-secondary {
+  @apply bg-white text-green-600 border-2 border-green-600 font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:bg-green-600 hover:text-white;
+}
+
+.eth-card {
+  @apply bg-white rounded-2xl shadow-lg border border-yellow-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  box-shadow: var(--eth-shadow-soft);
+}
+
+.eth-card:hover {
+  box-shadow: var(--eth-shadow-medium);
+}
+
+.eth-card-featured {
+  background: var(--eth-gradient-primary);
+  @apply text-white rounded-2xl shadow-xl border-0 overflow-hidden;
+  box-shadow: var(--eth-shadow-strong);
+}
+
+.eth-input {
+  @apply border-2 border-yellow-200 rounded-lg px-4 py-3 text-base transition-all duration-300 focus:border-green-600 focus:outline-none focus:ring-4 focus:ring-green-100;
+}
+
+.eth-gradient-text {
+  background: var(--eth-gradient-heritage);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.eth-pattern-subtle {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23009639' fill-opacity='0.03'%3E%3Cpath d='M20 20h20v20H20V20zm-20 0h20v20H0V20z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.eth-pattern-dots {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFCD00' fill-opacity='0.05'%3E%3Ccircle cx='3' cy='3' r='2'/%3E%3Ccircle cx='13' cy='13' r='2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.eth-glow {
+  box-shadow: var(--eth-shadow-glow);
+}
+
+/* Ethiopian Flag Accent */
+.eth-flag-accent {
+  position: relative;
+}
+
+.eth-flag-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--eth-gradient-heritage);
+  border-radius: 2px;
+}
+
+/* Ethiopian Cultural Animations */
+@keyframes eth-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes eth-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes eth-pulse-green {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 57, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 150, 57, 0);
+  }
+}
+
+.eth-animate-fade-in-up {
+  animation: eth-fade-in-up 0.6s ease-out;
+}
+
+.eth-animate-slide-in-right {
+  animation: eth-slide-in-right 0.6s ease-out;
+}
+
+.eth-animate-pulse-green {
+  animation: eth-pulse-green 2s infinite;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
+}
+
+@layer utilities {
+  .input-class {
+    @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
+  }
+
+  .sheet-content button {
+    @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
+  }
+
+  .text14_padding10 {
+    @apply text-14 px-4 py-2.5 font-semibold;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .header-2 {
+    @apply text-18 font-semibold text-gray-900;
+  }
+
+  .text-10 {
+    @apply text-[10px] leading-[14px];
+  }
+
+  .text-12 {
+    @apply text-[12px] leading-[16px];
+  }
+
+  .text-14 {
+    @apply text-[14px] leading-[20px];
+  }
+
+  .text-16 {
+    @apply text-[16px] leading-[24px];
+  }
+
+  .text-18 {
+    @apply text-[18px] leading-[22px];
+  }
+
+  .text-20 {
+    @apply text-[20px] leading-[24px];
+  }
+
+  .text-24 {
+    @apply text-[24px] leading-[30px];
+  }
+
+  .text-26 {
+    @apply text-[26px] leading-[32px];
+  }
+
+  .text-30 {
+    @apply text-[30px] leading-[38px];
+  }
+
+  .text-36 {
+    @apply text-[36px] leading-[44px];
+  }
+
+  /* Advanced Dashboard Layout */
+  .dashboard-layout {
+    @apply w-full h-screen overflow-hidden bg-gray-50 dark:bg-gray-900;
+  }
+
+  /* Desktop Layout */
+  .sidebar-container {
+    @apply w-64 h-full bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex-shrink-0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-content-area {
+    @apply flex-1 flex flex-col h-full overflow-hidden;
+  }
+
+  .desktop-header {
+    @apply h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 flex items-center justify-between flex-shrink-0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .desktop-content {
+    @apply flex-1 overflow-y-auto overflow-x-hidden;
+    padding: 24px;
+    background: linear-gradient(180deg, #f9fafb 0%, rgba(0, 150, 57, 0.02) 50%, rgba(255, 205, 0, 0.02) 100%) !important;
+  }
+
+  .dark .desktop-content {
+    background: linear-gradient(180deg, #111827 0%, rgba(0, 150, 57, 0.05) 50%, rgba(255, 205, 0, 0.05) 100%) !important;
+  }
+
+  /* Mobile Layout */
+  .mobile-header {
+    @apply h-14 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 flex items-center justify-between sticky top-0 z-50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-content {
+    @apply overflow-y-auto overflow-x-hidden;
+    padding: 16px;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(180deg, #f9fafb 0%, rgba(0, 150, 57, 0.02) 50%, rgba(255, 205, 0, 0.02) 100%) !important;
+  }
+
+  .dark .mobile-content {
+    background: linear-gradient(180deg, #111827 0%, rgba(0, 150, 57, 0.05) 50%, rgba(255, 205, 0, 0.05) 100%) !important;
+  }
+
+  /* Mobile Layout Components */
+  .mobile-layout {
+    @apply w-full max-w-full overflow-x-hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-page-header {
+    @apply mb-4 p-4 bg-white rounded-xl border border-gray-200 shadow-sm flex-shrink-0;
+  }
+
+  .mobile-page-content {
+    @apply space-y-4 max-w-full overflow-x-hidden flex-1;
+    overflow-y: auto;
+  }
+
+  /* Mobile Cards */
+  .mobile-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-4 max-w-full overflow-hidden;
+  }
+
+  .mobile-grid {
+    @apply grid grid-cols-1 gap-4 max-w-full;
+  }
+
+  .mobile-grid-2 {
+    @apply grid grid-cols-2 gap-3 max-w-full;
+  }
+
+  /* Mobile Scrolling Fix */
+  .lg\\:hidden {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .lg\\:hidden .mobile-content {
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Home Content */
+  .home {
+    @apply w-full;
+  }
+
+  .home-content {
+    @apply flex w-full flex-col gap-6 max-w-6xl mx-auto;
+  }
+
+  .home-header {
+    @apply flex flex-col gap-6 mb-6;
+  }
+
+  .total-balance {
+    @apply flex w-full items-center gap-4 lg:gap-6 rounded-2xl border border-green-200 p-6 lg:p-8 shadow-lg;
+  }
+
+  .total-balance-chart {
+    @apply flex size-full max-w-[120px] items-center sm:max-w-[140px];
+  }
+
+  .total-balance-label {
+    @apply text-16 font-medium text-green-100;
+  }
+
+  .total-balance-amount {
+    @apply text-28 lg:text-36 flex-1 font-bold text-white;
+  }
+
+  .recent-transactions {
+    @apply flex w-full flex-col gap-6 lg:gap-8 max-w-full overflow-hidden;
+  }
+
+  .view-all-btn {
+    @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
+  }
+
+  .recent-transactions {
+    @apply flex w-full flex-col gap-6;
+  }
+
+  .recent-transactions-label {
+    @apply text-20 md:text-24 font-semibold text-gray-900;
+  }
+
+  .recent-transactions-tablist {
+    @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
+  }
+
+
+
+  .profile-banner {
+    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+  }
+
+  .profile {
+    @apply relative flex px-6 max-xl:justify-center;
+  }
+
+  .profile-img {
+    @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
+  }
+
+  .profile-details {
+    @apply flex flex-col pt-24;
+  }
+
+  .profile-name {
+    @apply text-24 font-semibold text-gray-900;
+  }
+
+  .profile-email {
+    @apply text-16 font-normal text-gray-600;
+  }
+
+  .banks {
+    @apply flex flex-col justify-between gap-8 px-6 py-8;
+  }
+
+  /* My Banks */
+  .my-banks {
+    @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
+  }
+
+  /* My Banks */
+  .transactions {
+    @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+  }
+
+  .transactions-header {
+    @apply flex w-full flex-col items-start justify-between gap-8 md:flex-row;
+  }
+
+  .transactions-account {
+    @apply flex flex-col justify-between gap-4 rounded-lg border-y bg-blue-600 px-4 py-5 md:flex-row;
+  }
+
+  .transactions-account-balance {
+    @apply flex-center flex-col  gap-2 rounded-md bg-blue-25/20 px-4 py-2 text-white;
+  }
+
+  .header-box {
+    @apply flex flex-col gap-1;
+  }
+
+  .header-box-title {
+    @apply text-24 lg:text-30 font-semibold text-gray-900;
+  }
+
+  .header-box-subtext {
+    @apply text-14 lg:text-16 font-normal text-gray-600;
+  }
+
+  /* Bank Card */
+  .bank-card {
+    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white bg-bank-gradient shadow-creditCard backdrop-blur-[6px];
+  }
+
+  .bank-card_content {
+    @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] bg-gray-700 bg-bank-gradient px-5 pb-4 pt-5;
+  }
+
+  .bank-card_icon {
+    @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-bank-gradient bg-cover bg-center bg-no-repeat py-5 pr-5;
+  }
+
+  /* Bank Info */
+  .bank-info {
+    @apply gap-[18px] flex p-4 transition-all border bg-blue-25 border-transparent;
+  }
+
+  /* Category Badge */
+  .category-badge {
+    @apply flex-center truncate w-fit gap-1 rounded-2xl border-[1.5px] py-[2px] pl-1.5 pr-2;
+  }
+
+  .banktab-item {
+    @apply gap-[18px] border-b-2 flex px-2 sm:px-4 py-2 transition-all;
+  }
+
+  /* Mobile nav */
+  .mobilenav-sheet {
+    @apply flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto;
+  }
+
+  .mobilenav-sheet_close {
+    @apply flex gap-3 items-center p-4 rounded-lg w-full max-w-60;
+  }
+
+  /* PlaidLink */
+  .plaidlink-primary {
+    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+  }
+
+  .plaidlink-ghost {
+    @apply flex cursor-pointer items-center justify-center gap-3 rounded-lg px-3 py-7 hover:bg-white lg:justify-start;
+  }
+
+  .plaidlink-default {
+    @apply flex !justify-start cursor-pointer gap-3 rounded-lg !bg-transparent flex-row;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Auth */
+  .auth-asset {
+    @apply flex h-screen w-full sticky top-0 items-center justify-end bg-sky-1 max-lg:hidden;
+  }
+
+  /* Auth Form */
+  .auth-form {
+    @apply flex min-h-screen w-full max-w-[420px] flex-col justify-center gap-5 py-10 md:gap-8;
+  }
+
+  .form-item {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .form-label {
+    @apply text-14 w-full max-w-[280px] font-medium text-gray-700;
+  }
+
+  .form-message {
+    @apply text-12 text-red-500;
+  }
+
+  .form-btn {
+    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+  }
+
+  .form-link {
+    @apply text-14 cursor-pointer font-medium text-bankGradient;
+  }
+
+  /* Payment Transfer */
+  .payment-transfer {
+    @apply no-scrollbar flex flex-col overflow-y-scroll bg-gray-25 p-8 md:max-h-screen xl:py-12;
+  }
+
+  .payment-transfer_form-item {
+    @apply flex w-full max-w-[850px] flex-col gap-3 md:flex-row lg:gap-8;
+  }
+
+  .payment-transfer_form-content {
+    @apply flex w-full max-w-[280px] flex-col gap-2;
+  }
+
+  .payment-transfer_form-details {
+    @apply flex flex-col gap-1 border-t border-gray-200 pb-5 pt-6;
+  }
+
+  .payment-transfer_btn-box {
+    @apply mt-5 flex w-full max-w-[850px] gap-3 border-gray-200 py-5;
+  }
+
+  .payment-transfer_btn {
+    @apply text-14 w-full bg-bank-gradient font-semibold text-white shadow-form !important;
+  }
+
+  /* Root Layout */
+  .root-layout {
+    @apply flex h-14 sm:h-16 items-center justify-between p-3 sm:p-5 shadow-creditCard lg:hidden overflow-x-hidden;
+  }
+
+  /* Bank Info */
+  .bank-info_content {
+    @apply flex flex-1 items-center justify-between gap-2 overflow-hidden;
+  }
+
+  /* Footer */
+  .footer {
+    @apply flex cursor-pointer items-center justify-between gap-2 py-3 max-w-full overflow-hidden;
+  }
+
+  .footer_name {
+    @apply flex items-center justify-center rounded-full bg-gray-200 max-xl:hidden flex-shrink-0;
+  }
+
+  .footer_email {
+    @apply flex flex-1 flex-col justify-center max-xl:hidden min-w-0;
+  }
+
+  .footer_name-mobile {
+    @apply flex items-center justify-center rounded-full bg-gray-200 flex-shrink-0;
+  }
+
+  .footer_email-mobile {
+    @apply flex flex-1 flex-col justify-center min-w-0 px-2;
+  }
+
+  .footer_image {
+    @apply relative flex-shrink-0 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    @apply h-full w-full flex flex-col bg-white dark:bg-gray-800 overflow-hidden;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(0, 150, 57, 0.02) 50%, rgba(255, 205, 0, 0.02) 100%);
+  }
+
+  .dark .sidebar {
+    background: linear-gradient(180deg, #1f2937 0%, rgba(0, 150, 57, 0.05) 50%, rgba(255, 205, 0, 0.05) 100%);
+  }
+
+  .sidebar-nav {
+    @apply flex-1 overflow-hidden p-4;
+    max-height: calc(100vh - 200px);
+  }
+
+  .sidebar-footer {
+    @apply flex-shrink-0 p-4 border-t border-gray-100;
+    max-height: 120px;
+    overflow: hidden;
+  }
+
+  .sidebar-logo {
+    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold max-xl:hidden;
+    background: var(--eth-gradient-heritage);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sidebar-link {
+    @apply flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start transition-all duration-300 relative;
+  }
+
+  .sidebar-label {
+    @apply text-16 font-semibold text-gray-700 max-xl:hidden;
+  }
+
+  /* Ethiopian Banking Specific Styles */
+  .eth-banking-card {
+    @apply bg-gradient-to-br from-green-600 via-green-500 to-emerald-600 text-white rounded-2xl shadow-xl border border-green-400/20 relative overflow-hidden;
+  }
+
+  .eth-transaction-item {
+    @apply flex items-center justify-between p-4 bg-white rounded-lg border border-green-100 hover:shadow-md transition-all duration-200;
+  }
+
+  .eth-transaction-item:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--eth-shadow-medium);
+  }
+
+  /* Payment Gateway Styles */
+  .payment-gateway {
+    @apply w-full;
+  }
+
+  .payment-gateway-content {
+    @apply flex w-full flex-col gap-6 max-w-6xl mx-auto;
+  }
+
+  /* Enhanced Tab Content Visibility */
+  .payment-tab-content {
+    @apply w-full min-h-[500px] p-0 m-0;
+  }
+
+  /* Improved Card Layouts */
+  .payment-card {
+    @apply w-full shadow-lg border border-gray-100 rounded-2xl overflow-hidden;
+  }
+
+  /* Better Form Spacing */
+  .payment-form {
+    @apply space-y-6;
+  }
+
+  /* Enhanced Button Styles */
+  .payment-button {
+    @apply w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg touch-manipulation;
+  }
+
+  /* Responsive Utilities */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6;
+  }
+
+  .responsive-padding {
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
+  }
+
+  .responsive-margin {
+    @apply m-3 sm:m-4 md:m-6 lg:m-8;
+  }
+
+  .responsive-text {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .responsive-heading {
+    @apply text-lg sm:text-xl lg:text-2xl xl:text-3xl;
+  }
+
+  /* Mobile Touch Targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] touch-manipulation;
+  }
+
+  /* Prevent Horizontal Scroll */
+  .no-horizontal-scroll {
+    @apply overflow-x-hidden max-w-full;
+  }
+
+  /* Container Management */
+  .main-content-container {
+    @apply w-full max-w-full overflow-x-hidden;
+  }
+
+  .sidebar-content-container {
+    @apply flex flex-col h-full overflow-hidden;
+  }
+
+  .right-sidebar-content {
+    @apply flex flex-col h-full overflow-y-auto overflow-x-hidden;
+  }
+
+  /* Global Popup/Modal Fixes */
+  [data-radix-popper-content-wrapper],
+  [data-radix-select-content],
+  [data-radix-dropdown-menu-content],
+  [data-radix-popover-content] {
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .light [data-radix-popper-content-wrapper],
+  .light [data-radix-select-content],
+  .light [data-radix-dropdown-menu-content],
+  .light [data-radix-popover-content] {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .dark [data-radix-popper-content-wrapper],
+  .dark [data-radix-select-content],
+  .dark [data-radix-dropdown-menu-content],
+  .dark [data-radix-popover-content] {
+    background: rgba(31, 41, 55, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  [data-radix-dialog-overlay],
+  [data-radix-sheet-overlay] {
+    background: rgba(0, 0, 0, 0.2) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  .dark [data-radix-dialog-overlay],
+  .dark [data-radix-sheet-overlay] {
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  [data-radix-dialog-content],
+  [data-radix-sheet-content] {
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .light [data-radix-dialog-content],
+  .light [data-radix-sheet-content] {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .dark [data-radix-dialog-content],
+  .dark [data-radix-sheet-content] {
+    background: rgba(31, 41, 55, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+}

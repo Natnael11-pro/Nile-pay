@@ -1,0 +1,33 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Ethiopian Flag Colors -->
+  <circle cx="20" cy="20" r="20" fill="url(#gradient1)"/>
+  
+  <!-- Nile River Flow -->
+  <path d="M8 15C12 12, 16 18, 20 15C24 12, 28 18, 32 15" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M8 20C12 17, 16 23, 20 20C24 17, 28 23, 32 20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M8 25C12 22, 16 28, 20 25C24 22, 28 28, 32 25" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+  
+  <!-- Ethiopian Birr Symbol (ETB) -->
+  <g transform="translate(15, 8)">
+    <rect x="0" y="0" width="10" height="2" fill="#FFCD00" rx="1"/>
+    <rect x="0" y="3" width="8" height="1.5" fill="#FFCD00" rx="0.75"/>
+    <rect x="0" y="5.5" width="10" height="2" fill="#FFCD00" rx="1"/>
+    <circle cx="8" cy="4" r="1.5" fill="none" stroke="#FFCD00" stroke-width="1"/>
+  </g>
+  
+  <!-- Payment/Transfer Arrow -->
+  <g transform="translate(12, 28)">
+    <path d="M0 2L6 2M6 2L4 0M6 2L4 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 2L10 2M10 2L12 0M10 2L12 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="8" cy="2" r="1" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#009639;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F47AF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
